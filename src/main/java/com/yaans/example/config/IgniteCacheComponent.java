@@ -6,12 +6,14 @@ import org.apache.ignite.IgniteCache;
 @Slf4j
 public class IgniteCacheComponent<T> {
 
-    IgniteCache<String, T> cache;
+    private final String CACHE_NAME = "EXAMPLE_CACHE";
+
+    private IgniteCache<String, T> cache;
 
     public IgniteCacheComponent(IgniteComponent server) {
 
         log.info("initialize {}", this.getClass().getName());
-        cache = server.getIgnite().getOrCreateCache("EXAMPLE_CACHE");
+        cache = server.getIgnite().getOrCreateCache(CACHE_NAME);
     }
 
     public void put(String key, T t) {

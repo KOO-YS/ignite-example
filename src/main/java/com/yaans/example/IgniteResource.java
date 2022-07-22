@@ -5,12 +5,14 @@ import com.yaans.example.config.IgniteComponent;
 import com.yaans.example.config.IgniteJDBCComponent;
 import com.yaans.example.model.Product;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.jboss.resteasy.reactive.RestPath;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import java.sql.SQLException;
 
+@Slf4j
 @Path("ignite")
 @RequiredArgsConstructor
 public class IgniteResource {
@@ -24,8 +26,8 @@ public class IgniteResource {
 
         productCache.put(key, Product.builder().id(1).name("water").isOnSale(true).build());
 
-        productCache.get(key);
-
+        Object value = productCache.get(key);
+        log.info("get value : {}", value.toString());
     }
 
     @GET
