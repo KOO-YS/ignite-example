@@ -1,8 +1,8 @@
 package com.yaans.example;
 
-import com.yaans.example.config.IgniteCacheComponent;
-import com.yaans.example.config.IgniteComponent;
-import com.yaans.example.config.IgniteJDBCComponent;
+import com.yaans.example.config.server.IgniteCacheComponent;
+import com.yaans.example.config.server.IgniteComponent;
+import com.yaans.example.config.server.IgniteJDBCComponent;
 import com.yaans.example.model.Product;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

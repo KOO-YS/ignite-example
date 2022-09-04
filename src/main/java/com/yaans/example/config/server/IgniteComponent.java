@@ -1,4 +1,4 @@
-package com.yaans.example.config;
+package com.yaans.example.config.server;
 
 
 import com.yaans.example.model.Product;
@@ -18,8 +18,6 @@ public class IgniteComponent {
 
     public Ignite ignite;
 
-//    public IgniteCacheComponent<Product> igniteCacheComponent = new IgniteCacheComponent<>();
-
     public IgniteComponent() {
         IgniteConfiguration config = new IgniteConfiguration();
 
@@ -31,10 +29,6 @@ public class IgniteComponent {
 
     }
 
-//    public IgniteCache getCache() {
-//        log.info("initialize {}", this.getClass().getName());
-//        cache = ignite.getOrCreateCache("EXAMPLE_CACHE");
-//    }
 
     public class IgniteCacheComponent<T> {
 

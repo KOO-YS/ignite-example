@@ -1,9 +1,8 @@
-package com.yaans.example.config;
+package com.yaans.example.config.server;
 
 import com.yaans.example.model.Product;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.ignite.IgniteCache;
-import org.apache.ignite.cache.query.SqlFieldsQuery;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -24,7 +23,7 @@ public class IgniteJDBCComponent {
         cache = server.getIgnite().cache("EXAMPLE_JDBC");
 
         Class.forName("org.apache.ignite.IgniteJdbcThinDriver");
-        conn = DriverManager.getConnection("jdbc:ignite:thin://127.0.0.1/");
+            conn = DriverManager.getConnection("jdbc:ignite:thin://127.0.0.1/");
         initTables();
     }
 

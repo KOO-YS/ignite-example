@@ -1,19 +1,17 @@
-package com.yaans.example.config;
+package com.yaans.example.config.server;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.ignite.IgniteCache;
 
+
 @Slf4j
-public class IgniteCacheComponent<T> {
+public class IgniteCacheComponent <T> {
 
-    private final String CACHE_NAME = "EXAMPLE_CACHE";
-
-    private IgniteCache<String, T> cache;
+    public IgniteCache<String, T> cache;
 
     public IgniteCacheComponent(IgniteComponent server) {
-
         log.info("initialize {}", this.getClass().getName());
-        cache = server.getIgnite().getOrCreateCache(CACHE_NAME);
+        cache = server.getIgnite().getOrCreateCache("EXAMPLE_CACHE");
     }
 
     public void put(String key, T t) {

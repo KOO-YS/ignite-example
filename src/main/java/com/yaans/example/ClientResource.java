@@ -1,6 +1,6 @@
 package com.yaans.example;
 
-import com.yaans.example.config.IgniteClientComponent;
+import com.yaans.example.config.client.IgniteClientComponent;
 import com.yaans.example.model.Product;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
